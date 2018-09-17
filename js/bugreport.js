@@ -37,6 +37,8 @@ var mm = {
     }
 };
 
+var bl_exp = /\||expected result|actual result|client settings|system settings/gi;
+
 function updateSyntax() {
     var desc = $('#desc-field').val();
     var expected = $('#exp-field').val();
@@ -51,11 +53,14 @@ function updateSyntax() {
             steps = steps + ' - ' + step;
         }
     }
+    var valid = true;
     if (desc && expected && actual && client && system && steps) {
         bugtext = '!submit ' + desc + ' | Steps to Reproduce:' + steps + ' Expected Result: ' + expected + ' Actual Result: ' + actual + ' Client Settings: ' + client + ' System Settings: ' + system;
+        valid = bugtext.match(bl_exp).length <= 5;
     }
     $('#syntax').text(bugtext);
     $('#lrg-rep').toggleClass('hidden', bugtext.length < 1400);
+    $('#inv-rep').toggleClass('hidden', valid);    
 }
 
 function addStep() {
