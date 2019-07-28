@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unofficial Discord Bug Syntax Tool</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/bugreport.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="images/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" sizes="180x180" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-101730653-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu show-for-small-only">
+          <li class="menu-text">Unofficial Bug Syntax Tool</li>
+          <li><a href="./"><i class="far fa-plus-square"></i></a></li>
+          <li><a href="./edit"><i class="far fa-edit"></i></a></li>
+          <li class="act-pg"><a href="./storeinfo"><i class="fas fa-info"></i></a></li>
+          <li><a id="switch-mobile"><i class="far fa-sun"></i></a></li>
+        </ul>
+        <ul class="menu show-for-medium">
+          <li class="menu-text">Unofficial Bug Syntax Tool</li>
+          <li><a href="./"><i class="far fa-plus-square"></i> Create</a></li>
+          <li><a href="./edit"><i class="far fa-edit"></i> Edit</a></li>
+          <li class="act-pg"><a href="./storeinfo"><i class="fas fa-info"></i> Store Info</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right show-for-medium">
+        <ul class="menu">
+          <li><a id="switch-desktop"><i class="far fa-sun"></i> Light Mode</a></li>
+        </ul>
+      </div>
+    </div><br />
+    <div class="column row" id="content">
+      <h5>Store Info</h5>
+      <div class="callout mbox">
+        <strong>Notice:</strong>
+        <p class="help-text">Information is stored locally to your Device and not on any of our servers.</p>
+      </div>
+      
+      <label for="windows-info">Windows Information</label>
+      <p class="help-text" id="windows-help">This is the Windows and version you are running. Example: Windows 10 64x, Version 1903. <a data-open="win-ver-modal">(help)</a></p>
+      <input type="text" id="windows-info" aria-describedby="windows-help">
+
+      <label for="mac-info">Mac Information</label>
+      <p class="help-text" id="mac-help">This is the Mac computer and version you are running. Example: Early 2015 Macbook Pro Retina, macOS Sierra 10.12.6. <a data-open="mac-ver-modal">(help)</a></p>
+      <input type="text" id="mac-info" aria-describedby="mac-help">
+
+      <label for="linux-info">Linux Information</label>
+      <p class="help-text" id="linux-help">This is the Linux distro and version you are running. Example: Ubuntu 18.04. <a data-open="linux-ver-modal">(help)</a></p>
+      <input type="text" id="linux-info" aria-describedby="linux-help">
+
+      <label for="android-info">Android Information</label>
+      <p class="help-text" id="android-help">This is the Phone you are running, and the Android version you are running. Example: Pixel 3, Android 9. <a data-open="android-ver-modal">(help)</a></p>
+      <input type="text" id="android-info" aria-describedby="android-help">
+
+      <label for="ios-info">iOS Information</label>
+      <p class="help-text" id="ios-help">This is the Device you are running, and the iOS version you are running. Example: iPhone XR iOS 12.3.1. <a data-open="ios-ver-modal">(help)</a></p>
+      <input type="text" id="ios-info" aria-describedby="ios-help">
+
+    </div>
+    <!-- End of main Content -->
+    
+    <div class="reveal" id="win-ver-modal" data-reveal>
+        <h4>Finding your Microsoft Windows Version</h4>
+        <dl>
+            <dt>Both</dt>
+            <dd>
+              <ul>
+                <li>Press the Windows logo key + R.</li>
+                <li>Type <code>winver</code> in the Open box, and then select OK.</li>
+                <li>At the top will show which Windows you are running, and the second line of the body will show the Version you are running.</li>
+              </ul>
+            </dd>
+          <dt>Windows 10</dt>
+          <dd>
+            <ul>
+              <li>Open the Start menu, Settings, System, About. Alternatively you can click <a href="ms-settings:about">here</a> to open it directly.</li>
+              <li>Scroll down to Windows Specification.</li>
+              <li><strong>Edition</strong> is the Windows you are running and <strong>Version</strong> is the version of Windows you are running on.</li>
+            </ul>
+          </dd>
+          <dt>Windows 8</dt>
+          <dd>
+            <ul>
+              <li>If you're using a <strong>touch device</strong>, swipe in from the right edge of the screen, tap Settings, and then tap Change PC settings. Continue to step 3.</li>
+              <li>If you're using a <strong>mouse</strong>, point to the lower-right corner of the screen, move the mouse pointer up, click Settings, and then click Change PC settings.</li>
+              <li>Select PC and devices, PC info.</li>
+              <li>Under the Windows Header you will see the Edition of Windows you are running.</li>
+            </ul>
+          </dd>
+        </dl>
+        <button type="button" class="close-button" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="mac-ver-modal" data-reveal>
+        <h4>Finding your Mac Version</h4>
+        <dl>
+          <dt>TITLE</dt>
+          <dd>
+            <ul>
+              <li>INFO</li>
+              <li>MORE INFO</li>
+              <li>LITTLE BIT MORE</li>
+            </ul>
+          </dd>
+        </dl>
+        <button type="button" class="close-button" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="linux-ver-modal" data-reveal>
+        <h4>Finding your Linux Version</h4>
+        <dl>
+          <dt>TITLE</dt>
+          <dd>
+            <ul>
+              <li>INFO</li>
+              <li>MORE INFO</li>
+              <li>LITTLE BIT MORE</li>
+            </ul>
+          </dd>
+        </dl>
+        <button type="button" class="close-button" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="android-ver-modal" data-reveal>
+        <h4>Finding your Android Version</h4>
+        <dl>
+          <dt>TITLE</dt>
+          <dd>
+            <ul>
+              <li>INFO</li>
+              <li>MORE INFO</li>
+              <li>LITTLE BIT MORE</li>
+            </ul>
+          </dd>
+        </dl>
+        <button type="button" class="close-button" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="reveal" id="ios-ver-modal" data-reveal>
+        <h4>Finding your iOS Version</h4>
+        <dl>
+          <dt>TITLE</dt>
+          <dd>
+            <ul>
+              <li>INFO</li>
+              <li>MORE INFO</li>
+              <li>LITTLE BIT MORE</li>
+            </ul>
+          </dd>
+        </dl>
+        <button type="button" class="close-button" data-close aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js"></script>
+    <script src="js/bugreport.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(pageLoad('storeinfo'));
+    </script>
+  </body>
+</html>

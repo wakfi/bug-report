@@ -26,6 +26,22 @@ var field_data = {
     }
 };
 
+var info = localStorage.getItem('storeinfo');
+try {
+    info = JSON.parse(info);
+} catch (e) {
+    info = false;
+}
+if (!info) {
+    info = {
+        "w": "",
+        "i": "",
+        "a": "",
+        "m": "",
+        "l": ""
+    };
+}
+
 var mm = {
     dark: {
         d: "Light Mode",
@@ -43,6 +59,10 @@ function updateSyntax() {
     var actual = $('#act-field').val();
     var client = $('#client-field').val();
     var system = $('#sys-field').val();
+    var storeinfo = system.match(/(?:\B)-(l|m|w|a|i)(?:\b)/i);
+    if (storeinfo && storeinfo[1]) {
+        system = system.replace('-' + storeinfo[1], info[storeinfo[1]]);
+    }
     var steps = '';
     var bugtext = '';
     for (var i = 1; i <= window.sct; i++) {
@@ -123,6 +143,14 @@ function updateField(event) {
     }
 }
 
+function updateInfo() {
+    $('input[id*="-info"]').each(function(i, item) {
+        var device = item.id.substring(0,1);
+        info[device] = item.value;
+    });
+    localStorage.setItem('storeinfo', JSON.stringify(info));
+}
+
 function loadTheme() {
     var light = false;
     if (typeof(Storage) !== 'undefined') {
@@ -171,19 +199,28 @@ function pageLoad(page) {
             cb_btn = '#edit-copy-btn';
             st = '#edit-syntax';
             break;
+        case "storeinfo":
+            $('div#content').on('blur', 'input[id*="-info"]', updateInfo);
+            $('input[id*="-info"]').each(function(i, item) {
+                var device = item.id.substring(0,1);
+                item.value = info[device];
+            })
+            break;
     }
-    var cb = new ClipboardJS(cb_btn, {
-        text: function(trigger) {
-            return $(st).text();
-        }
-    });
-    cb.on('success', function(e) {
-        $(e.trigger).html('Copied');
-        ga('send', 'event', 'syntax', 'copy');
-        setTimeout(function() {
-            $(e.trigger).html('Copy');
-        }, 2000);
-    });
+    if (cb_btn !== '' && st !== '') {
+        var cb = new ClipboardJS(cb_btn, {
+            text: function(trigger) {
+                return $(st).text();
+            }
+        });
+        cb.on('success', function(e) {
+            $(e.trigger).html('Copied');
+            ga('send', 'event', 'syntax', 'copy');
+            setTimeout(function() {
+                $(e.trigger).html('Copy');
+            }, 2000);
+        });
+    }
     $('body').on('click', 'a[id*="switch-"]', switchMode);
     if (loadTheme()) {
         switchMode();
