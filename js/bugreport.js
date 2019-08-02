@@ -25,13 +25,13 @@ var field_data = {
         al: "ss"
     }
 };
-
-var info = localStorage.getItem('storeinfo');
-try {
-    info = JSON.parse(info);
-} catch (e) {
-    info = false;
+var info = false;
+if (typeof(Storage) !== 'undefined') {
+    info = localStorage.getItem('storeinfo');
+    try       { info = JSON.parse(info); }
+    catch (e) { }
 }
+
 if (!info) {
     info = {
         "w": "",
@@ -52,6 +52,16 @@ var mm = {
         m: "moon"
     }
 };
+
+function infoload() {
+    $('input[id*="-info"]').each(function(i, item) {
+        var device = item.id.substring(0,1);
+        item.value = info[device];
+    });
+    if (typeof(Storage) !== 'undefined') {
+        alert('This web browser does no support localstorage. Store info will not function!');
+    }
+}
 
 function updateSyntax() {
     var desc = $('#desc-field').val();
@@ -144,11 +154,13 @@ function updateField(event) {
 }
 
 function updateInfo() {
-    $('input[id*="-info"]').each(function(i, item) {
-        var device = item.id.substring(0,1);
-        info[device] = item.value;
-    });
-    localStorage.setItem('storeinfo', JSON.stringify(info));
+    if (typeof(Storage) !== 'undefined') {
+        $('input[id*="-info"]').each(function(i, item) {
+            var device = item.id.substring(0,1);
+            info[device] = item.value;
+        });
+        localStorage.setItem('storeinfo', JSON.stringify(info));
+    }
 }
 
 function loadTheme() {
@@ -200,11 +212,8 @@ function pageLoad(page) {
             st = '#edit-syntax';
             break;
         case "storeinfo":
+            infoload();
             $('div#content').on('blur', 'input[id*="-info"]', updateInfo);
-            $('input[id*="-info"]').each(function(i, item) {
-                var device = item.id.substring(0,1);
-                item.value = info[device];
-            })
             break;
     }
     if (cb_btn !== '' && st !== '') {
