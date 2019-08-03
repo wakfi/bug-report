@@ -57,11 +57,11 @@
       <input type="text" id="windows-info" aria-describedby="windows-help">
 
       <label for="mac-info">Mac Information</label>
-      <p class="help-text" id="mac-help">This is the Mac computer and version you are running. Example: Early 2015 Macbook Pro Retina, macOS Sierra 10.12.6. <a data-open="mac-ver-modal">(help)</a></p>
+      <p class="help-text" id="mac-help">This is the Mac computer and version you are running. Example: Early 2015 Macbook Pro Retina, macOS Sierra 10.12.6. <!--<a data-open="mac-ver-modal">(help)</a>--></p>
       <input type="text" id="mac-info" aria-describedby="mac-help">
 
       <label for="linux-info">Linux Information</label>
-      <p class="help-text" id="linux-help">This is the Linux distro and version you are running. Example: Ubuntu 18.04. <a data-open="linux-ver-modal">(help)</a></p>
+      <p class="help-text" id="linux-help">This is the Linux distro and version you are running. Example: Ubuntu 18.04. <!--<a data-open="linux-ver-modal">(help)</a>--></p>
       <input type="text" id="linux-info" aria-describedby="linux-help">
 
       <label for="android-info">Android Information</label>
@@ -69,19 +69,19 @@
       <input type="text" id="android-info" aria-describedby="android-help">
 
       <label for="ios-info">iOS Information</label>
-      <p class="help-text" id="ios-help">This is the Device you are running, and the iOS version you are running. Example: iPhone XR iOS 12.3.1. <a data-open="ios-ver-modal">(help)</a></p>
+      <p class="help-text" id="ios-help">This is the Device you are running, and the iOS version you are running. Example: iPhone XR iOS 12.3.1. <!--<a data-open="ios-ver-modal">(help)</a>--></p>
       <input type="text" id="ios-info" aria-describedby="ios-help">
 
     </div>
     <!-- End of main Content -->
-    
+
     <div class="reveal" id="win-ver-modal" data-reveal>
         <h4>Finding your Microsoft Windows Version</h4>
         <dl>
             <dt>Both</dt>
             <dd>
               <ul>
-                <li>Press the Windows logo key + R.</li>
+                <li>Press the <i class="fab fa-windows"></i> Windows logo key + R.</li>
                 <li>Type <code>winver</code> in the Open box, and then select OK.</li>
                 <li>At the top will show which Windows you are running, and the second line of the body will show the Version you are running.</li>
               </ul>
@@ -89,7 +89,7 @@
           <dt>Windows 10</dt>
           <dd>
             <ul>
-              <li>Open the Start menu, Settings, System, About. Alternatively you can click <a href="ms-settings:about">here</a> to open it directly.</li>
+              <li>Open the Start menu, <i class="fas fa-cog"></i> Settings, System, About. Alternatively you can click <a href="ms-settings:about">here</a> to open it directly.</li>
               <li>Scroll down to Windows Specification.</li>
               <li><strong>Edition</strong> is the Windows you are running and <strong>Version</strong> is the version of Windows you are running on.</li>
             </ul>
@@ -97,8 +97,8 @@
           <dt>Windows 8</dt>
           <dd>
             <ul>
-              <li>If you're using a <strong>touch device</strong>, swipe in from the right edge of the screen, tap Settings, and then tap Change PC settings. Continue to step 3.</li>
-              <li>If you're using a <strong>mouse</strong>, point to the lower-right corner of the screen, move the mouse pointer up, click Settings, and then click Change PC settings.</li>
+              <li>If you're using a <strong>touch device</strong>, swipe in from the right edge of the screen, tap <i class="fas fa-cog"></i> Settings, and then tap Change PC settings. Continue to step 3.</li>
+              <li>If you're using a <strong>mouse</strong>, point to the lower-right corner of the screen, move the mouse pointer up, click <i class="fas fa-cog"></i> Settings, and then click Change PC settings.</li>
               <li>Select PC and devices, PC info.</li>
               <li>Under the Windows Header you will see the Edition of Windows you are running.</li>
             </ul>
@@ -146,12 +146,13 @@
     <div class="reveal" id="android-ver-modal" data-reveal>
         <h4>Finding your Android Version</h4>
         <dl>
-          <dt>TITLE</dt>
+          <dt>All </dt>
           <dd>
             <ul>
-              <li>INFO</li>
-              <li>MORE INFO</li>
-              <li>LITTLE BIT MORE</li>
+              <li>Open <i class="fas fa-cog"></i> Settings app.</li>
+              <li>Scroll down to the bottom and Select <strong>About Phone</strong>.</li>
+              <li>On some devices you will need to click an additional menu of Software Info.</li>
+              <li>There should be an item called Android Version.</li>
             </ul>
           </dd>
         </dl>

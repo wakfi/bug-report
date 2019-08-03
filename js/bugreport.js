@@ -34,11 +34,11 @@ try {
 }
 if (!info) {
     info = {
-        "w": "",
-        "i": "",
-        "a": "",
-        "m": "",
-        "l": ""
+        'w': '',
+        'i': '',
+        'a': '',
+        'm': '',
+        'l': ''
     };
 }
 
@@ -59,7 +59,7 @@ function updateSyntax() {
     var actual = $('#act-field').val();
     var client = $('#client-field').val();
     var system = $('#sys-field').val();
-    var storeinfo = system.match(/(?:\B)-(l|m|w|a|i)(?:\b)/i);
+    var storeinfo = system.match(/(?:\B)-(w|m|l|a|i)(?:\b)/i);
     if (storeinfo && storeinfo[1]) {
         system = system.replace('-' + storeinfo[1], info[storeinfo[1]]);
     }
@@ -114,6 +114,12 @@ function updateEditSyntax() {
         }
     } else {
         edit_val = $('#' + edit_type + '-field').val();
+        if (edit_type == 'sys') {
+            var storeinfo = edit_val.match(/(?:\B)-(w|m|l|a|i)(?:\b)/i);
+            if (storeinfo && storeinfo[1]) {
+                edit_val = edit_val.replace('-' + storeinfo[1], info[storeinfo[1]]);
+            }
+        }
         alias = field_data[edit_type].al;
     }
     var edit_txt = '';
@@ -204,7 +210,7 @@ function pageLoad(page) {
             $('input[id*="-info"]').each(function(i, item) {
                 var device = item.id.substring(0,1);
                 item.value = info[device];
-            })
+            });
             break;
     }
     if (cb_btn !== '' && st !== '') {
