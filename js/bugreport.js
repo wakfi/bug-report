@@ -58,8 +58,8 @@ function infoload() {
         var device = item.id.substring(0,1);
         item.value = info[device];
     });
-    if (typeof(Storage) !== 'undefined') {
-        alert('This web browser does no support localstorage. Store info will not function!');
+    if (typeof(Storage) === 'undefined') {
+        alert('This web browser does not support localStorage. Store info will not function!');
     }
 }
 
