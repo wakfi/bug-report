@@ -51,25 +51,25 @@
         <strong>Notice:</strong>
         <p class="help-text">Information is stored locally to your Device and not on any of our servers.</p>
       </div>
-      
+
       <label for="windows-info">Windows Information</label>
-      <p class="help-text" id="windows-help">This is the Windows and version you are running. Example: Windows 10 64x, Version 1903. <a data-open="win-ver-modal">(help)</a></p>
+      <p class="help-text" id="windows-help">This is the Windows and version you are running. <a data-open="win-ver-modal">(help)</a><br><em>Example: Windows 10 64x, Version 1903.</em></p>
       <input type="text" id="windows-info" aria-describedby="windows-help">
 
       <label for="mac-info">Mac Information</label>
-      <p class="help-text" id="mac-help">This is the Mac computer and version you are running. Example: Early 2015 Macbook Pro Retina, macOS Sierra 10.12.6. <!--<a data-open="mac-ver-modal">(help)</a>--></p>
+      <p class="help-text" id="mac-help">This is the Mac computer and version you are running. <a data-open="mac-ver-modal">(help)</a><br><em>Example: Early 2015 Macbook Pro Retina, macOS Sierra 10.12.6.</em></p>
       <input type="text" id="mac-info" aria-describedby="mac-help">
 
       <label for="linux-info">Linux Information</label>
-      <p class="help-text" id="linux-help">This is the Linux distro and version you are running. Example: Ubuntu 18.04. <!--<a data-open="linux-ver-modal">(help)</a>--></p>
+      <p class="help-text" id="linux-help">This is the Linux distro and version you are running. <a data-open="linux-ver-modal">(help)</a><br><em>Example: Ubuntu 18.04.</em></p>
       <input type="text" id="linux-info" aria-describedby="linux-help">
 
       <label for="android-info">Android Information</label>
-      <p class="help-text" id="android-help">This is the Phone you are running, and the Android version you are running. Example: Pixel 3, Android 9. <a data-open="android-ver-modal">(help)</a></p>
+      <p class="help-text" id="android-help">This is the Phone you are running, and the Android version you are running. <a data-open="android-ver-modal">(help)</a><br><em>Example: Pixel 3, Android 9.</em></p>
       <input type="text" id="android-info" aria-describedby="android-help">
 
       <label for="ios-info">iOS Information</label>
-      <p class="help-text" id="ios-help">This is the Device you are running, and the iOS version you are running. Example: iPhone XR iOS 12.3.1. <!--<a data-open="ios-ver-modal">(help)</a>--></p>
+      <p class="help-text" id="ios-help">This is the Device you are running, and the iOS version you are running. <a data-open="ios-ver-modal">(help)</a><br><em>Example: iPhone XR iOS 12.3.1.</em></p>
       <input type="text" id="ios-info" aria-describedby="ios-help">
 
     </div>
@@ -112,12 +112,13 @@
     <div class="reveal" id="mac-ver-modal" data-reveal>
         <h4>Finding your Mac Version</h4>
         <dl>
-          <dt>TITLE</dt>
+          <dt>All versions</dt>
           <dd>
             <ul>
-              <li>INFO</li>
-              <li>MORE INFO</li>
-              <li>LITTLE BIT MORE</li>
+              <li>Choose Apple menu in the top left of your Screen</li>
+              <li>Select the <strong>About This Mac</strong></li>
+              <li>At the top will say the Version of macOS you are running.</li>
+              <li>On the First line below the version will tell you the Specific mac you are using!</li>
             </ul>
           </dd>
         </dl>
@@ -129,12 +130,12 @@
     <div class="reveal" id="linux-ver-modal" data-reveal>
         <h4>Finding your Linux Version</h4>
         <dl>
-          <dt>TITLE</dt>
+          <dt>Most Linux Versions</dt>
           <dd>
             <ul>
-              <li>INFO</li>
-              <li>MORE INFO</li>
-              <li>LITTLE BIT MORE</li>
+              <li>Open a new Command line interface</li>
+              <li>Type in the following command: <code>lsb_release -a</code></li>
+              <li>and you can use the Description field.</li>
             </ul>
           </dd>
         </dl>
@@ -164,12 +165,12 @@
     <div class="reveal" id="ios-ver-modal" data-reveal>
         <h4>Finding your iOS Version</h4>
         <dl>
-          <dt>TITLE</dt>
+          <dt>All iOS Versions</dt>
           <dd>
             <ul>
-              <li>INFO</li>
-              <li>MORE INFO</li>
-              <li>LITTLE BIT MORE</li>
+              <li>Go to Settings > General.</li>
+              <li>Then tap About</li>
+              <li>In the menu you will have Modal Name + Software Version</li>
             </ul>
           </dd>
         </dl>
