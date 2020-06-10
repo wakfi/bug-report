@@ -14,7 +14,7 @@ body {
 }
 
 body.light {
-    background-color: #fefefe; 
+    background-color: #fefefe;
     color: #0a0a0a;
 }
 
@@ -113,7 +113,7 @@ body.light .help-text {
 }
 
 .button-group a {
-    width: 5.6rem;
+    width: 6.2rem;
 }
 
 .button-group .button {
@@ -129,13 +129,13 @@ body.light .help-text {
 }
 
 @media screen and (max-width: 39.9375em) {
-    .trello > .button {
+    .workboards > .button {
         border-radius: 0.1875rem;
         width: 49%;
     }
 }
 
-.trello {
+.workboards {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }

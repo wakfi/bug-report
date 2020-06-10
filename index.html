@@ -12,15 +12,6 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="icon" type="image/png" href="images/favicon-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" sizes="180x180" />
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-101730653-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
   </head>
   <body>
     <div class="top-bar">
@@ -50,16 +41,15 @@
       <div class="callout mbox">
         <strong>Remember:</strong>
         <ul>
-          <li>Check the Trello boards and/or bug report channels in case your bug has already been reported: <div class="small button-group trello">
-          <a class="button" target="_blank" href="https://trello.com/b/AExxR9lU/desktop-bugs"><i class="fas fa-desktop"></i> Desktop</a>
-          <a class="button" target="_blank" href="https://trello.com/b/Vqrkz3KO/android-beta-bugs"><i class="fab fa-android"></i> Android</a>
-          <a class="button" target="_blank" href="https://trello.com/b/vLPlnX60/ios-testflight-bugs"><i class="fab fa-apple"></i> iOS</a>
-          <a class="button" target="_blank" href="https://trello.com/b/UyU76Esh/linux-bugs"><i class="fab fa-linux"></i> Linux</a>
-          <a class="button" target="_blank" href="https://trello.com/b/Fb0LyRnD/store-bugs"><i class="fas fa-store-alt"></i> Store</a>
-          <a class="button" target="_blank" href="https://trello.com/b/k6jr4NyY/overlay-bugs"><i class="fas fa-window-restore"></i> Overlay</a>
+          <li>Check the Workboards and/or bug report channels in case your bug has already been reported: <div class="small button-group workboards">
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/3/"><i class="fas fa-desktop"></i> Desktop</a>
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/1/"><i class="fab fa-android"></i> Android</a>
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/2/"><i class="fab fa-apple"></i> iOS</a>
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/18/"><i class="fab fa-linux"></i> Linux</a>
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/15/"><i class="fas fa-window-restore"></i> Overlay</a>
+          <a class="button" target="_blank" href="https://bugs.discord.com/project/view/14/"><i class="far fa-window-maximize"></i> Marketing</a>
         </div></li>
           <li>Screenshots/video may help explain your report and are required for visual bugs. You can post links to these in a client chat channel and ask for a <strong class="bh">Bug Hunter</strong> to attach them for you</li>
-          <li>Bananas are an excellent source of potassium</li>
         </ul>
       </div>
       <label for="desc-field">Short Description</label>
@@ -87,7 +77,7 @@
       <p class="help-text" id="client-help">The version/build of Discord you're using, e.g. TestFlight 1.9.2 <a data-open="client-ver-modal">(help)</a></p>
       <input type="text" id="client-field" aria-describedby="client-help" required>
       <label for="sys-field">System Settings</label>
-      <p class="help-text" id="sys-help">Your system settings including device model (if on mobile), OS, and version, e.g. iPhone 8, iOS 11.0.3</p>
+      <p class="help-text" id="sys-help">Your system settings including device model (if on mobile), OS, and version, e.g. iPhone 8, iOS 11.0.3<br><i>Use site's stored info here, in the same way as it's done on the bot with a -w for Windows</i></p>
       <input type="text" id="sys-field" aria-describedby="sys-help" required>
       <div class="callout warn hidden" id="lrg-rep">
         <p>Your report is quite large. Consider shortening it to ensure that it can be accepted by Bug Bot and Bug Hunters are able to approve/deny</p>
@@ -106,16 +96,15 @@
         <dd>
           <ul>
             <li>Open the Settings menu and scroll down</li>
-            <li>The version number should be listed at the bottom or next to the 'Change Log' entry</li>
-            <li>Also include if you're using a Testflight (inc. build number) or Alpha/Beta build</li>
+            <li>The <b>version number</b> should be listed at the bottom or next to the 'Change Log' entry</li>
+            <li>If you're on the TestFlight version of Discord, the <b>build number</b> is viewable in the TestFlight application</li>
           </ul>
         </dd>
         <dt>Desktop</dt>
         <dd>
           <ul>
-            <li>Open Dev Tools using <kbd>Ctrl+Shift+I</kbd> (Windows/Linux) or <kbd>Cmd+Opt+I</kbd> (macOS)</li>
-            <li>Click the Console tab</li>
-            <li>Scroll up and find the entry beginning '[BUILD INFO]'</li>
+            <li>Open Settings</li>
+            <li>The <b>version channel and number</b> are located at the bottom of the Left menu, below the 'Change Log' and Social Media icons.</li>
           </ul>
         </dd>
       </dl>
@@ -130,6 +119,13 @@
     <script>
       $(document).foundation();
       $(document).ready(pageLoad('create'));
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145328931-1"></script>
+    <script>
+        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+        gtag('config', 'UA-145328931-1');
     </script>
   </body>
 </html>
