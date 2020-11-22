@@ -82,7 +82,7 @@ function updateSyntax() {
             if (steps == "") {
                 steps = step;
             } else {
-                steps = steps + ' ~ ' + step;
+                steps = steps + ' - ' + step;
             }
         }
 
