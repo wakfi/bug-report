@@ -122,10 +122,10 @@ function updateEditSyntax() {
         for (var i = 1; i <= window.sct; i++) {
             var step = $('#s' + i + '-field').val();
             if (step) {
-                if (edit_val == "") { // Fixes issue with first step not using a ~
+                if (edit_val == "") { // Fixes issue with first step not using a -
                     edit_val = step;
                 } else {
-                    edit_val = edit_val + ' ~ ' + step;
+                    edit_val = edit_val + ' - ' + step;
                 }
             }
         }
